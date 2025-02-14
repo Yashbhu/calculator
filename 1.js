@@ -1,24 +1,26 @@
-function calc() {
-    let n1 = parseFloat(prompt('Pehla number daal:', ''));
-    let n2 = parseFloat(prompt('Dusra number daal:', ''));
-    let choice = prompt('Operation daal (+, -, *, /):', '');
+function calculate() {
+    let n1 = parseFloat(document.getElementById("num1").value);
+    let n2 = parseFloat(document.getElementById("num2").value);
+    let choice = document.getElementById("operator").value;
 
+    let result;
     switch (choice) {
         case "*":
-            alert(n1 * n2);
+            result = n1 * n2;
             break;
         case "/":
-            n2 !== 0 ? alert(n1 / n2) : alert("Bhakk 10vi fail!");
+            result = n2 !== 0 ? n1 / n2 : "Bhakk 10vi fail!";
             break;
         case "+":
-            alert(n1 + n2);
+            result = n1 + n2;
             break;
         case "-":
-            alert(n1 - n2);
+            result = n1 - n2;
             break;
         default:
-            alert('Apki ganit khrb hai');
+            result = 'Apki ganit khrb hai';
     }
-}
 
-calc();
+    document.getElementById("result").innerText = result;
+    console.log("Calculated Result:", result); // Debugging ke liye
+}
